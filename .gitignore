@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+venv/
+data/raw/
+data/processed/
+data/scored/
+models/*.pkl
+.pytest_cache/
+spark-warehouse/
+metastore_db/
+*.log
