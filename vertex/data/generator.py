@@ -66,7 +66,7 @@ def generate_behavioral_data(
                 "event_type": event_type,
                 "page": random.choice(PAGES),
                 "timestamp": (current_date + timedelta(
-                    seconds=rng.integers(0, 86400)
+                    seconds=int(rng.integers(0, 86400))
                 )).isoformat(),
                 "device": random.choice(DEVICES),
                 "channel": random.choice(CHANNELS),
@@ -91,7 +91,7 @@ def generate_behavioral_data(
         churned = 1 if cp > 0.65 else 0
         user_records.append({
             "user_id": uid,
-            "signup_date": (base_date - timedelta(days=rng.integers(30, 365))).isoformat(),
+            "signup_date": (base_date - timedelta(days=int(rng.integers(30, 365)))).isoformat(),
             "subscription_tier": random.choice(["free", "basic", "premium"]),
             "country": random.choice(["US", "UK", "DE", "FR", "IN", "JP", "BR"]),
             "churned": churned,
